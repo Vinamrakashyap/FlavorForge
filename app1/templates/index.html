@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block start %}
+    
+    <h1> Hii ... Welcome to A V M T School </h1>
+
+    <hr>
+    <table class = "container">
+        <tr>
+          <th>S_No.</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>eligible</th>
+        </tr>
+        {% for people in voter_info %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{ people.name }}</td>
+          <td> {{ people.age }}</td>
+          <td {% if people.age < 18 %} style ="background:red" {% endif %}>
+            {% if people.age >= 18 %}
+            👍
+            {% elif people.age < 18 %}
+            👎
+            {% else %}
+            ❓
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="contact/">
+        contact
+    </a>
+    |
+    <a href="about/">
+        About
+    </a>
+
+
+{% endblock %}
