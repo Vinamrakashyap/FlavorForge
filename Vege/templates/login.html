@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+{% block start %}
+
+<div class = "container mt-5">
+    <form class = "col-6 mx-auto shadow-lg card p-3"method = "post" enctype = "multipart/form-data">
+        {% csrf_token %}
+        <h2>Login:- </h2>
+        <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="username" 
+                name="username" 
+                aria-describedby="usernameHelp"
+                required
+              >
+              <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <p> Don't have an account <a href="/register/">Register</a></p>
+        </form>
+        
+     </form>
+
+     
+
+</div>
+
+
+{% endblock %}
